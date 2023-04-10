@@ -1,0 +1,30 @@
+@page
+@model GerenRest.RazorPages.Pages.Events.Index
+
+<h1 class="display-4">Eventos Registrados</h1>
+
+<hr/>
+<td><a class="btn btn-success" asp-page="/Events/Create">Criar novo evento</a></td>
+<hr/>
+
+<div>
+    <table class="table table-bordered table-striped table-hover-custom">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Numero</td>
+                <td>Ocupação</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eventModel in Model.MesaModels)
+            {
+                <tr>
+                    <td>@eventModel.MesaID</td>
+                    <td>@eventModel.Numero</td>
+                    <td>@eventModel.Ocupada?'Ocupado':'Livre'</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

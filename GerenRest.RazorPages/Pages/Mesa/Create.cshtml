@@ -1,0 +1,33 @@
+@page
+@model GerenRest.RazorPages.Pages.Mesa.Create
+
+<h1>Criar novo evento</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <input type="hidden" asp-for="MesaModel.EventID">
+            <div class="form-group">
+                <label asp-for="MesaModel.Name"></label>
+                <input asp-for="MesaModel.Name" class="form-control">
+                <span asp-validation-for="MesaModel.Name" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesaModel.Description"></label>
+                <input asp-for="MesaModel.Description" class="form-control">
+                <span asp-validation-for="MesaModel.Description" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesaModel.Date"></label>
+                <input asp-for="MesaModel.Date" class="form-control">
+                <span asp-validation-for="MesaModel.Date" class="text-dange"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Salvar"/>
+                <a asp-page="/Events/Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

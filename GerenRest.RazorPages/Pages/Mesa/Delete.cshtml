@@ -1,0 +1,16 @@
+@page "{id:int}"
+@model GerenRest.RazorPages.Pages.Mesa.Delete
+
+<div>
+    <h1>Detalhes do item a ser removido</h1>
+
+    <p><strong>Numero:</strong> @Model.MesaModel.Numero</p>
+    <p><strong>Estado:</strong> @Model.MesaModel.Ocupada?</p>
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <input type="submit" value="Deletar" class="btn btn-danger"/>
+        <a asp-page="./Event/Index" class="btn btn-primary">Retornar para a listagem</a>
+    </div>
+</form>
