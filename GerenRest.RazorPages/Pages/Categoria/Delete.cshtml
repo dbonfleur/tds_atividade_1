@@ -1,17 +1,16 @@
 @page "{id:int}"
-@model Aula05.RazorPages.Pages.Events.Delete
+@model GerenRest.RazorPages.Pages.Categoria.Delete
 
 <div>
-    <h1>Detalhes do item a ser removido</h1>
+    <h1>Detalhes da categoria a ser removido</h1>
 
-    <p><strong>Nome:</strong> @Model.EventModel.Name</p>
-    <p><strong>Descrição:</strong> @Model.EventModel.Description</p>
-    <p><strong>Data da criação:</strong> @Model.EventModel.Date</p>
+    <p><strong>Nome:</strong> @Model.CatModel.Nome</p>
+    <p><strong>Descrição:</strong> @Model.CatModel.Descricao</p>
 </div>
 
 <form method="post">
     <div class="form-group">
         <input type="submit" value="Deletar" class="btn btn-danger"/>
-        <a asp-page="./Event/Index" class="btn btn-primary">Retornar para a listagem</a>
+        <a asp-page="./Categoria/Index" class="btn btn-primary">Retornar para a listagem</a>
     </div>
 </form>

@@ -4,19 +4,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GerenRest.RazorPages.Pages.Categoria
+namespace GerenRest.RazorPages.Pages.Garcon
 {
     public class Index : PageModel
     {
         private readonly AppDbContext _context;
-        public List<CategoriaModel> CategoriaList { get; set; } = new();
+        public List<GarconModel> GarconModel { get; set; } = new();
         public Index(AppDbContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> OnGetAsync()
         {
-            CategoriaList = await _context.Categorias!.ToListAsync();
+            GarconModel = await _context.Garcons!.ToListAsync();
             return Page();
         }
     }

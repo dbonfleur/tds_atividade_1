@@ -1,16 +1,16 @@
-using Aula05.RazorPages.Data;
-using Aula05.RazorPages.Models;
+using GerenRest.RazorPages.Data;
+using GerenRest.RazorPages.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace Aula05.RazorPages.Pages.Events
+namespace GerenRest.RazorPages.Pages.Categoria
 {
     public class Delete : PageModel
     {
         private readonly AppDbContext _context;
         [BindProperty]
-        public EventModel EventModel { get; set; } = new();
+        public CategoriaModel CatModel { get; set; } = new();
         public Delete(AppDbContext context)
         {
             _context = context;
@@ -18,33 +18,33 @@ namespace Aula05.RazorPages.Pages.Events
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if(id == null || _context.Events == null) {
+            if(id == null || _context.Categorias == null) {
                 return NotFound();
             }
 
-            var eventModel = await _context.Events.FirstOrDefaultAsync(e => e.EventID == id);
+            var catModel = await _context.Categorias.FirstOrDefaultAsync(e => e.CategoriaID == id);
 
-            if(eventModel == null) {
+            if(catModel == null) {
                 return NotFound();
             }
 
-            EventModel = eventModel;
+            CatModel = catModel;
 
             return Page();
         }
     
         public async Task<IActionResult> OnPostAsync(int id)
         {
-            var eventToDelete = await _context.Events!.FindAsync(id);
+            var categoriaToDelete = await _context.Categorias!.FindAsync(id);
 
-            if(eventToDelete == null) {
+            if(categoriaToDelete == null) {
                 return NotFound();
             }
 
             try {
-                _context.Events.Remove(eventToDelete);
+                _context.Categorias.Remove(categoriaToDelete);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Events/Index");
+                return RedirectToPage("/Categoria/Index");
             } catch(DbUpdateException) {
                 return Page();
             }

@@ -1,34 +1,32 @@
 @page
-@model Aula05.RazorPages.Pages.Events.Index
+@model GerenRest.RazorPages.Pages.Categoria.Index
 
-<h1 class="display-4">Eventos Registrados</h1>
+<h1 class="display-4">Categoria Registradas</h1>
 
 <hr/>
-<td><a class="btn btn-success" asp-page="/Events/Create">Criar novo evento</a></td>
+<td><a class="btn btn-success" asp-page="./Create">Criar nova categoria</a></td>
 <hr/>
 
 <div>
     <table class="table table-bordered table-striped table-hover-custom">
         <thead>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.EventList[0].EventID)</td>
-                <td>@Html.DisplayNameFor(model => model.EventList[0].Name)</td>
-                <td>@Html.DisplayNameFor(model => model.EventList[0].Description)</td>
-                <td>@Html.DisplayNameFor(model => model.EventList[0].Date)</td>
+                <td>@Html.DisplayNameFor(model => model.CategoriaList[0].CategoriaID)</td>
+                <td>@Html.DisplayNameFor(model => model.CategoriaList[0].Nome)</td>
+                <td>@Html.DisplayNameFor(model => model.CategoriaList[0].Descricao)</td>
             </tr>
         </thead>
         <tbody>
-            @foreach (var eventModel in Model.EventList)
+            @foreach (var catModel in Model.CategoriaList)
             {
                 <tr>
-                    <td>@Html.DisplayFor(model => eventModel.EventID)</td>
-                    <td>@Html.DisplayFor(model => eventModel.Name)</td>
-                    <td>@Html.DisplayFor(model => eventModel.Description)</td>
-                    <td>@Html.DisplayFor(model => eventModel.Date)</td>
+                    <td>@Html.DisplayFor(model => catModel.CategoriaID)</td>
+                    <td>@Html.DisplayFor(model => catModel.Nome)</td>
+                    <td>@Html.DisplayFor(model => catModel.Descricao)</td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@eventModel.EventID">Alterar</a>
-                        <a asp-page="./Details" asp-route-id="@eventModel.EventID">Visualizar</a>
-                        <a asp-page="./Delete" asp-route-id="@eventModel.EventID">Remover</a>
+                        <a asp-page="./Edit" asp-route-id="@catModel.CategoriaID">Alterar</a>
+                        <a asp-page="./Details" asp-route-id="@catModel.CategoriaID">Visualizar</a>
+                        <a asp-page="./Delete" asp-route-id="@catModel.CategoriaID">Remover</a>
                     </td>
                 </tr>
             }

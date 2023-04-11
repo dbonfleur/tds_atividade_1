@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GerenRest.RazorPages.Pages.Categoria
+namespace GerenRest.RazorPages.Pages.Garcon
 {
     public class Create : PageModel
     {
         private readonly AppDbContext _context;
         [BindProperty]
-        public CategoriaModel CatModel { get; set; } = new();
+        public GarconModel GarconModel { get; set; } = new();
         public Create(AppDbContext context)
         {
             _context = context;
@@ -22,9 +22,9 @@ namespace GerenRest.RazorPages.Pages.Categoria
                 return Page();
 
             try {
-                _context.Add(CatModel);
+                _context.Add(GarconModel);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Categoria/Index");
+                return RedirectToPage("/Garcon/Index");
             } catch(DbUpdateException) {
                 return Page();
             }

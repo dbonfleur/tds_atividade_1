@@ -36,8 +36,52 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Garcon/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Garcon/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Garcon/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Garcon/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Garcon/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FyY29uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Mesa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Mesa/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Mesa/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Mesa/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Mesa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Produto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Shared/_MainLayout.cshtml]

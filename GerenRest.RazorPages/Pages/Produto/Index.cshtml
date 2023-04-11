@@ -1,0 +1,36 @@
+@* @page
+@model GerenRest.RazorPages.Pages.Produto.Index
+
+<h1 class="display-4">Produtos Registrados</h1>
+
+<hr/>
+<td><a class="btn btn-success" asp-page="./Create">Registrar novo Produto</a></td>
+<hr/>
+
+<div>
+    <table class="table table-bordered table-striped table-hover-custom">
+        <thead>
+            <tr>
+                <td>Nome Produto</td>
+                <td>Descrição</td>
+                <td>Preço</td>
+                <td>Preço</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mesaModel in Model.MesaModel)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => mesaModel.Numero)</td>
+                    <td>@Html.DisplayFor(model => mesaModel.Ocupada)</td>
+                    <td>@Html.DisplayFor(model => mesaModel.HoraAbertura)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@mesaModel.MesaID">Alterar</a>
+                        <a asp-page="./Details" asp-route-id="@mesaModel.MesaID">Visualizar</a>
+                        <a asp-page="./Delete" asp-route-id="@mesaModel.MesaID">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> *@

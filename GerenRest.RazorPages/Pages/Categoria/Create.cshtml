@@ -1,32 +1,27 @@
 @page
-@model Aula05.RazorPages.Pages.Events.Create
+@model GerenRest.RazorPages.Pages.Categoria.Create
 
-<h1>Criar novo evento</h1>
+<h1>Criar nova Categoria</h1>
 
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-dange"></div>
-            <input type="hidden" asp-for="EventModel.EventID">
+            <input type="hidden" asp-for="CatModel.CategoriaID">
             <div class="form-group">
-                <label asp-for="EventModel.Name"></label>
-                <input asp-for="EventModel.Name" class="form-control">
-                <span asp-validation-for="EventModel.Name" class="text-dange"></span>
+                <label asp-for="CatModel.Nome">Nome da Categoria</label>
+                <input asp-for="CatModel.Nome" class="form-control">
+                <span asp-validation-for="CatModel.Nome" class="text-dange"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EventModel.Description"></label>
-                <input asp-for="EventModel.Description" class="form-control">
-                <span asp-validation-for="EventModel.Description" class="text-dange"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EventModel.Date"></label>
-                <input asp-for="EventModel.Date" class="form-control">
-                <span asp-validation-for="EventModel.Date" class="text-dange"></span>
+                <label asp-for="CatModel.Descricao">Descrição</label>
+                <input asp-for="CatModel.Descricao" class="form-control">
+                <span asp-validation-for="CatModel.Descricao" class="text-dange"></span>
             </div>
             <br/>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Salvar"/>
-                <a asp-page="/Events/Index" class="btn btn-secondary">Cancelar</a>
+                <a asp-page="/Categoria/Index" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

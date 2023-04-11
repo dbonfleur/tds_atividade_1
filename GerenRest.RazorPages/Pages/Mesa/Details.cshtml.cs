@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GerenRest.RazorPages.Pages.Categoria
+namespace GerenRest.RazorPages.Pages.Mesa
 {
     public class Details : PageModel
     {
         private readonly AppDbContext _context;
-        public CategoriaModel CatModel { get; set; } = new();
+        public MesaModel MesaModel { get; set; } = new();
         public Details(AppDbContext context)
         {
             _context = context;
@@ -17,17 +17,17 @@ namespace GerenRest.RazorPages.Pages.Categoria
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if(id == null || _context.Categorias == null) {
+            if(id == null || _context.Mesas == null) {
                 return NotFound();
             }
 
-            var catModel = await _context.Categorias.FirstOrDefaultAsync(e => e.CategoriaID == id);
+            var mesaModel = await _context.Mesas.FirstOrDefaultAsync(e => e.MesaID == id);
 
-            if(catModel == null) {
+            if(mesaModel == null) {
                 return NotFound();
             }
 
-            CatModel = catModel;
+            MesaModel = mesaModel;
 
             return Page();
         }

@@ -4,52 +4,47 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GerenRest.RazorPages.Pages.Categoria
+namespace GerenRest.RazorPages.Pages.Mesa
 {
-    public class Edit : PageModel
+    public class Delete : PageModel
     {
         private readonly AppDbContext _context;
         [BindProperty]
-        public CategoriaModel CatModel { get; set; } = new();
-        public Edit(AppDbContext context)
+        public MesaModel MesaModel { get; set; } = new();
+        public Delete(AppDbContext context)
         {
             _context = context;
         }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if(id == null || _context.Categorias == null) {
+            if(id == null || _context.Mesas == null) {
                 return NotFound();
             }
 
-            var catModel = await _context.Categorias.FirstOrDefaultAsync(e => e.CategoriaID == id);
+            var mesaModel = await _context.Mesas.FirstOrDefaultAsync(e => e.MesaID == id);
 
-            if(catModel == null) {
+            if(mesaModel == null) {
                 return NotFound();
             }
 
-            CatModel = catModel;
+            MesaModel = mesaModel;
 
             return Page();
         }
     
         public async Task<IActionResult> OnPostAsync(int id)
         {
-            if(!ModelState.IsValid)
-                return Page();
+            var mesaToDelete = await _context.Mesas!.FindAsync(id);
 
-            var catToUpdate = await _context.Categorias!.FindAsync(id);
-
-            if(catToUpdate == null) {
+            if(mesaToDelete == null) {
                 return NotFound();
             }
 
-            catToUpdate.Nome = CatModel.Nome;
-            catToUpdate.Descricao = CatModel.Descricao;
-
             try {
+                _context.Mesas.Remove(mesaToDelete);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Categoria/Index");
+                return RedirectToPage("/Mesa/Index");
             } catch(DbUpdateException) {
                 return Page();
             }

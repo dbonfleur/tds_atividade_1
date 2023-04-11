@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GerenRest.RazorPages.Pages.Categoria
+namespace GerenRest.RazorPages.Pages.Garcon
 {
     public class Edit : PageModel
     {
         private readonly AppDbContext _context;
         [BindProperty]
-        public CategoriaModel CatModel { get; set; } = new();
+        public GarconModel GarconModel { get; set; } = new();
         public Edit(AppDbContext context)
         {
             _context = context;
@@ -18,17 +18,17 @@ namespace GerenRest.RazorPages.Pages.Categoria
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if(id == null || _context.Categorias == null) {
+            if(id == null || _context.Garcons == null) {
                 return NotFound();
             }
 
-            var catModel = await _context.Categorias.FirstOrDefaultAsync(e => e.CategoriaID == id);
+            var garconModel = await _context.Garcons!.FirstOrDefaultAsync(e => e.GarconID == id);
 
-            if(catModel == null) {
+            if(garconModel == null) {
                 return NotFound();
             }
 
-            CatModel = catModel;
+            GarconModel = garconModel;
 
             return Page();
         }
@@ -38,18 +38,20 @@ namespace GerenRest.RazorPages.Pages.Categoria
             if(!ModelState.IsValid)
                 return Page();
 
-            var catToUpdate = await _context.Categorias!.FindAsync(id);
+            var garconToUpdate = await _context.Garcons!.FindAsync(id);
 
-            if(catToUpdate == null) {
+            if(garconToUpdate == null) {
                 return NotFound();
             }
 
-            catToUpdate.Nome = CatModel.Nome;
-            catToUpdate.Descricao = CatModel.Descricao;
+            garconToUpdate.Nome = GarconModel.Nome;
+            garconToUpdate.Sobrenome = GarconModel.Sobrenome;
+            garconToUpdate.NumIdentificao = GarconModel.NumIdentificao;
+            garconToUpdate.Telefone = GarconModel.Telefone;
 
             try {
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Categoria/Index");
+                return RedirectToPage("/Garcon/Index");
             } catch(DbUpdateException) {
                 return Page();
             }
