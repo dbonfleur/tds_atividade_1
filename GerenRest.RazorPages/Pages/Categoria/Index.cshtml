@@ -24,9 +24,9 @@
                     <td>@Html.DisplayFor(model => catModel.Nome)</td>
                     <td>@Html.DisplayFor(model => catModel.Descricao)</td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@catModel.CategoriaID">Alterar</a>
-                        <a asp-page="./Details" asp-route-id="@catModel.CategoriaID">Visualizar</a>
-                        <a asp-page="./Delete" asp-route-id="@catModel.CategoriaID">Remover</a>
+                        <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@catModel.CategoriaID">Alterar</a>
+                        <a class="btn btn-secondary" asp-page="./Details" asp-route-id="@catModel.CategoriaID">Visualizar</a>
+                        <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@catModel.CategoriaID">Remover</a>
                     </td>
                 </tr>
             }

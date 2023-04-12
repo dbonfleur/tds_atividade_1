@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\GitHub\tds_atividade_1\GerenRest.RazorPages
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Atendimento/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Atendimento/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Atendimento/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Atendimento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlbmRpbWVudG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Categoria/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -78,6 +94,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Mesa/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Produto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Produto/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Produto/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Produto/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHV0b1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GitHub/tds_atividade_1/GerenRest.RazorPages/Pages/Produto/Index.cshtml]

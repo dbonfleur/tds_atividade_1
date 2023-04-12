@@ -1,4 +1,3 @@
-using System.Globalization;
 using GerenRest.RazorPages.Data;
 using GerenRest.RazorPages.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -11,48 +10,17 @@ namespace GerenRest.RazorPages.Pages.Mesa
     {
         private readonly AppDbContext _context;
         [BindProperty]
-        public MesaModel MesaModel { get; set; } = new();
-        public DateTime HoraEdit { get; set; }
-        [BindProperty]
-        public string? HoraForm { get; set; }
+        public MesaModel? MesaModel { get; set; }
         public Edit(AppDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
-        {
-            if(id == null || _context.Mesas == null) {
-                return NotFound();
-            }
+        public async Task<IActionResult> OnGetAsync(int? id) {
+            MesaModel = await _context.Mesas!.FindAsync(id);
 
-            var mesaModel = await _context.Mesas!.FirstOrDefaultAsync(e => e.MesaID == id);
-
-            if(mesaModel == null) {
-                return NotFound();
-            }
-            
-            HoraEdit = DateTime.ParseExact(mesaModel.HoraAbertura.ToString()!, "dd/MM/yyyy HH:mm:ss", null);
-            HoraForm = HoraEdit.ToShortTimeString();
-            MesaModel = mesaModel;
-
-            return Page();
-        }
-    
-        public async Task<IActionResult> OnPostAsync(int id)
-        {
-            if(!ModelState.IsValid)
-                return Page();
-
-            var mesaToUpdate = await _context.Mesas!.FindAsync(id);
-
-            if(mesaToUpdate == null) {
-                return NotFound();
-            }
-
-            mesaToUpdate.Numero = MesaModel.Numero;
-            mesaToUpdate.Ocupada = MesaModel.Ocupada;
-            mesaToUpdate.HoraAbertura = MesaModel.HoraAbertura;
+            MesaModel!.HoraAbertura = null;
+            MesaModel!.Ocupada = "Ocupada";
 
             try {
                 await _context.SaveChangesAsync();

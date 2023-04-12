@@ -21,12 +21,22 @@
             {
                 <tr>
                     <td>@Html.DisplayFor(model => mesaModel.Numero)</td>
-                    <td>@Html.DisplayFor(model => mesaModel.Ocupada)</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div>@Html.DisplayFor(model => mesaModel.Ocupada)</div>
+                            </div>
+                            @if(mesaModel.Ocupada == "Livre") {
+                                <div class="col-md-6">
+                                    <div><a class="btn btn-danger" asp-page="./Edit" asp-route-id="@mesaModel.MesaID">Ocupada</a></div>
+                                </div>
+                            }
+                        </div>
+                    </td>
                     <td>@Html.DisplayFor(model => mesaModel.HoraAbertura)</td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@mesaModel.MesaID">Alterar</a>
-                        <a asp-page="./Details" asp-route-id="@mesaModel.MesaID">Visualizar</a>
-                        <a asp-page="./Delete" asp-route-id="@mesaModel.MesaID">Remover</a>
+                        <a asp-page="./Details" class="btn btn-primary" asp-route-id="@mesaModel.MesaID">Visualizar</a>
+                        <a asp-page="./Delete" class="btn btn-danger" asp-route-id="@mesaModel.MesaID">Remover</a>
                     </td>
                 </tr>
             }

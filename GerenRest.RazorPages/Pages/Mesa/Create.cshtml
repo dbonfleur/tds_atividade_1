@@ -3,11 +3,14 @@
 
 <h1>Cadastrar nova Mesa</h1>
 
+@if (!string.IsNullOrEmpty(TempData["ErroMesa"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroMesa"]</div>
+}
+
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-dange"></div>
-            <input type="hidden" asp-for="MesaModel.MesaID">
             <div class="form-group">
                 <label asp-for="MesaModel.Numero">Numero</label>
                 <input asp-for="MesaModel.Numero" class="form-control">
@@ -15,23 +18,8 @@
             </div>
             <br/>
             <div class="form-group">
-                <label asp-for="MesaModel.Ocupada">Status</label>
-                <select asp-for="MesaModel.Ocupada">
-                    <option value="Livre" selected>Livre</option>
-                    <option value="Ocupada">Ocupada</option>
-                </select>
-                <span asp-validation-for="MesaModel.Ocupada" class="text-dange"></span>
-            </div>
-            <br/>
-            <div class="form-group">
-                <label asp-for="MesaModel.HoraAbertura">Hora Abertura</label>
-                <input asp-for="MesaModel.HoraAbertura" type="time" asp-format="HH:mm" class="form-control">
-                <span asp-validation-for="MesaModel.HoraAbertura" class="text-dange"></span>
-            </div>
-            <br/>
-            <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Salvar"/>
-                <a asp-page="/Categoria/Index" class="btn btn-secondary">Cancelar</a>
+                <a asp-page="/Mesa/Index" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

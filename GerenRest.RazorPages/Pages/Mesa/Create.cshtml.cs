@@ -11,6 +11,7 @@ namespace GerenRest.RazorPages.Pages.Mesa
         private readonly AppDbContext _context;
         [BindProperty]
         public MesaModel MesaModel { get; set; } = new();
+        public List<MesaModel>? ListMesa { get; set; }
         public Create(AppDbContext context)
         {
             _context = context;
@@ -20,6 +21,19 @@ namespace GerenRest.RazorPages.Pages.Mesa
         {
             if(!ModelState.IsValid)
                 return Page();
+            
+            ListMesa = await _context.Mesas!.ToListAsync();
+            if(ListMesa != null) {
+                foreach(var listMesa in ListMesa) {
+                    if(listMesa.Numero == MesaModel.Numero) {
+                        TempData["ErroMesa"] = "Número de mesa repetido!";
+                        return RedirectToPage("/Mesa/Create");
+                    }
+                }
+            }
+
+            MesaModel.Ocupada = "Livre";
+            MesaModel.HoraAbertura = DateTime.Now;
 
             try {
                 _context.Add(MesaModel);
@@ -29,5 +43,6 @@ namespace GerenRest.RazorPages.Pages.Mesa
                 return Page();
             }
         }
+
     }
 }

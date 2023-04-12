@@ -7,7 +7,6 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-dange"></div>
-            <input type="hidden" asp-for="GarconModel.GarconID">
             <div class="form-group">
                 <label asp-for="GarconModel.Nome">Nome</label>
                 <input asp-for="GarconModel.Nome" class="form-control">
@@ -31,7 +30,7 @@
             <br/>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Salvar"/>
-                <a asp-page="/Categoria/Index" class="btn btn-secondary">Cancelar</a>
+                <a asp-page="/Garcon/Index" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

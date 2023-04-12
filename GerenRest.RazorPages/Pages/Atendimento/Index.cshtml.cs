@@ -4,19 +4,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GerenRest.RazorPages.Pages.Produto
+namespace GerenRest.RazorPages.Pages.Atendimento
 {
     public class Index : PageModel
     {
         private readonly AppDbContext _context;
-        public List<ProdutoModel> ProdModel { get; set; } = new();
+        public List<AtendimentoModel> AtenModel { get; set; } = new();
         public Index(AppDbContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> OnGetAsync()
         {
-            ProdModel = await _context.Produtos!.Include(p => p.Categoria).ToListAsync();
+            AtenModel = await _context.Atendimentos!
+                .Include(p => p.ListaProdutos)
+                .Include(k => k.GarconResponsavel)
+                .Include(l => l.MesaAtendida)
+                .ToListAsync();
+
             return Page();
         }
     }
